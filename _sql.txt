@@ -1,0 +1,41 @@
+CREATE TABLE public.gigs
+(
+    budget character varying(20) COLLATE pg_catalog."default",
+    description text COLLATE pg_catalog."default",
+    id integer NOT NULL DEFAULT nextval('gigs_id_seq'::regclass),
+    technologies character varying(200) COLLATE pg_catalog."default",
+    title character varying(200) COLLATE pg_catalog."default",
+    contact_email character varying COLLATE pg_catalog."default",
+    "createdAt" date,
+    "updatedAt" date,
+    CONSTRAINT gigs_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.gigs
+    OWNER to postgres;
+
+INSERT INTO public.gigs(
+	budget, description, id, technologies, title, contact_email, "createdAt", "updatedAt")
+	VALUES ('$3000',
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nisi quam, ultricies ac faucibus nec, hendrerit ac justo. Suspendisse porttitor lorem in leo posuere, vel malesuada sapien scelerisque. Phasellus facilisis urna velit, at finibus augue pellentesque a. Aliquam quis iaculis orci, non dictum leo. Praesent nunc augue, euismod et nunc a, aliquet volutpat justo.',
+			1, 
+			'react,javascript,html,css',
+			'Looking for a React developer', 'user1@gmail.com', '2020-05-31', '2020-05-31');
+
+INSERT INTO public.gigs(
+	budget, description, id, technologies, title, contact_email, "createdAt", "updatedAt")
+	VALUES ('$1000',
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nisi quam, ultricies ac faucibus nec, hendrerit ac justo. Suspendisse porttitor lorem in leo posuere, vel malesuada sapien scelerisque. Phasellus facilisis urna velit, at finibus augue pellentesque a. Aliquam quis iaculis orci, non dictum leo. Praesent nunc augue, euismod et nunc a, aliquet volutpat justo.',
+			2, 
+			'wordpress,php,html,css',
+			'Simple Wordpress website', 'user2@gmail.com', '2020-05-31', '2020-05-31');
+
+INSERT INTO public.gigs(
+	budget, description, id, technologies, title, contact_email, "createdAt", "updatedAt")
+	VALUES ('4500€',
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam laoreet diam at bibendum pellentesque. Aliquam semper eros vitae libero aliquet, eu condimentum libero lobortis. Aenean laoreet turpis et nunc fringilla, a congue felis aliquet.',
+			3, 
+			'flutter,javascript,android',
+			'Flutter dev for mobile app', 'user3@gmail.com', '2020-06-01', '2020-06-01');
